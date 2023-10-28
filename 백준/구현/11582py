@@ -1,0 +1,14 @@
+"""
+백준 실버4 11582
+"""
+n = int(input())
+lst = list(map(int, input().split()))
+k = int(input())
+l, cnt = n // k, 0
+
+ans = []  #초기화
+for i in range(0, n, l):
+  ans.append(sorted(lst[i:i + l]))
+
+ans = ' '.join(str(item) for sublist in ans for item in sublist)
+print(ans)
